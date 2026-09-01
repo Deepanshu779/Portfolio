@@ -1,75 +1,177 @@
-# React + TypeScript + Vite
+# Deepanshu Kumar Pandit — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <strong>AI/ML • Generative AI • Full-Stack Development</strong>
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  A modern, interactive portfolio showcasing my projects, technical skills, experience, and credentials.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<p align="center">
+  <a href="https://github.com/Deepanshu779">GitHub</a> •
+  <a href="https://www.linkedin.com/in/deepanshu-kumar-pandit/">LinkedIn</a>
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About
 
-## Expanding the ESLint configuration
+This repository contains my personal developer portfolio, built to present my work and technical journey in one place.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+I am a B.Tech student focused on building practical software with **JavaScript, TypeScript, modern web technologies, AI/ML, and Generative AI**. I enjoy turning ideas into useful, responsive, and well-engineered applications.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The portfolio highlights:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Selected software and AI projects
+- Technical skills and technology stack
+- Professional and internship experience
+- Certifications and credentials
+- Contact and professional profiles
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Featured Projects
 
+| Project | Description |
+| --- | --- |
+| **KaathiRent** | A rental-focused web application designed around a practical booking and rental experience. |
+| **MedCore** | A healthcare-oriented application focused on delivering a useful digital experience for medical workflows. |
+| **MediAI 2.0** | An AI-focused project combining modern web development with Generative AI concepts. |
+| **Pricevana** | A price-oriented web application built to provide a practical product discovery experience. |
+
+> More projects and details are available directly on the portfolio.
+
+## Tech Stack
+
+### Frontend
+- React
+- TypeScript
+- JavaScript
+- HTML5
+- CSS3
+- Tailwind CSS
+
+### UI & Animation
+- Framer Motion
+- Lucide React
+- React Icons
+
+### 3D & Interactive Experiences
+- Three.js
+- React Three Fiber
+- React Three Drei
+
+### Development Tools
+- Vite
+- ESLint
+- Git & GitHub
+
+### AI / ML
+- Artificial Intelligence
+- Machine Learning
+- Generative AI
+- AI-powered application development
+
+## Portfolio Architecture
+
+```text
+Portfolio/
+├── public/
+│   ├── projects/          # Project showcase images
+│   ├── profile.png        # Profile image
+│   ├── resume.pdf         # Resume
+│   └── favicon.svg
+│
+├── src/
+│   ├── components/        # Shared UI components
+│   ├── sections/          # Portfolio sections
+│   ├── three/             # Three.js / 3D experience
+│   ├── assets/            # Local assets
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── index.html
+├── package.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Make sure you have **Node.js** and **npm** installed.
 
+### Installation
+
+```bash
+git clone https://github.com/Deepanshu779/Portfolio.git
+cd Portfolio
+npm install
 ```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+The development server will start through Vite. Open the local URL shown in your terminal.
+
+### Production build
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Design & Experience
+
+The portfolio uses a dark, technology-focused visual system with cyan accents, responsive layouts, motion, and interactive 3D elements.
+
+Key experience goals include:
+
+- **Clear personal branding** — quickly communicate who I am and what I build.
+- **Project-first presentation** — make practical work easy to discover.
+- **Interactive 3D hero** — add personality without replacing the content.
+- **Responsive design** — provide a consistent experience across screen sizes.
+- **Motion with purpose** — use animation to support navigation and visual hierarchy.
+- **Accessibility awareness** — respect reduced-motion preferences and maintain usable interactions.
+
+## Sections
+
+1. **Hero** — Introduction, role, social links, and primary call-to-action.
+2. **About** — Background and development focus.
+3. **Skills** — Technologies and technical capabilities.
+4. **Projects** — Selected applications and project work.
+5. **Experience** — Internship and professional experience.
+6. **Credentials** — Certifications and achievements.
+7. **Contact** — Email and professional networking links.
+
+## Connect
+
+If you'd like to discuss a project, collaboration, internship, or development opportunity:
+
+- **GitHub:** [Deepanshu779](https://github.com/Deepanshu779)
+- **LinkedIn:** [Deepanshu Kumar Pandit](https://www.linkedin.com/in/deepanshu-kumar-pandit/)
+- **Email:** deepanshukumarpandit2024@gmail.com
+
+## License
+
+This portfolio is a personal project. The source code is available for reference, but personal assets, profile information, resume content, and project materials should not be reused without permission.
+
+---
+
+<p align="center">
+  Built with React, TypeScript, Tailwind CSS, Framer Motion & Three.js.
+</p>
