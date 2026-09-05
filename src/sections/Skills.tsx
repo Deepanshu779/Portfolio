@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
     SiPython,
     SiCplusplus,
@@ -27,21 +28,20 @@ import {
     Wrench,
     MessageSquareText,
     Bot,
+    Search,
+    Cpu,
 } from "lucide-react";
 
 type Skill = {
     name: string;
     icon: React.ElementType;
     color: string;
+    group: string;
 };
 
-type SkillGroup = {
-    title: string;
-    icon: React.ElementType;
-    skills: Skill[];
-};
 
-const skillGroups: SkillGroup[] = [
+
+const rawSkillGroups: { title: string; icon: React.ElementType; skills: { name: string; icon: React.ElementType; color: string }[] }[] = [
     {
         title: "LANGUAGES",
         icon: Code2,
@@ -58,36 +58,12 @@ const skillGroups: SkillGroup[] = [
         title: "AI / ML",
         icon: BrainCircuit,
         skills: [
-            {
-                name: "Machine Learning",
-                icon: BrainCircuit,
-                color: "#22D3EE",
-            },
-            {
-                name: "Generative AI",
-                icon: Sparkles,
-                color: "#A855F7",
-            },
-            {
-                name: "NLP",
-                icon: MessageSquareText,
-                color: "#06B6D4",
-            },
-            {
-                name: "LLM APIs",
-                icon: Bot,
-                color: "#10B981",
-            },
-            {
-                name: "scikit-learn",
-                icon: SiScikitlearn,
-                color: "#F59E0B",
-            },
-            {
-                name: "Streamlit",
-                icon: SiStreamlit,
-                color: "#FF4B4B",
-            },
+            { name: "Machine Learning", icon: BrainCircuit, color: "#22D3EE" },
+            { name: "Generative AI", icon: Sparkles, color: "#A855F7" },
+            { name: "NLP", icon: MessageSquareText, color: "#06B6D4" },
+            { name: "LLM APIs", icon: Bot, color: "#10B981" },
+            { name: "scikit-learn", icon: SiScikitlearn, color: "#F59E0B" },
+            { name: "Streamlit", icon: SiStreamlit, color: "#FF4B4B" },
         ],
     },
     {
@@ -96,8 +72,8 @@ const skillGroups: SkillGroup[] = [
         skills: [
             { name: "React", icon: SiReact, color: "#61DAFB" },
             { name: "Node.js", icon: SiNodedotjs, color: "#68A063" },
-            { name: "Express.js", icon: SiExpress, color: "#FFFFFF" },
-            { name: "Flask", icon: SiFlask, color: "#FFFFFF" },
+            { name: "Express.js", icon: SiExpress, color: "#E2E8F0" },
+            { name: "Flask", icon: SiFlask, color: "#CBD5E1" },
         ],
     },
     {
@@ -120,152 +96,177 @@ const skillGroups: SkillGroup[] = [
     },
 ];
 
-function SkillCard({ skill }: { skill: Skill }) {
-    const Icon = skill.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
-
-    return (
-        <motion.div
-            whileHover={{
-                y: -6,
-                scale: 1.025,
-            }}
-            transition={{
-                type: "spring",
-                stiffness: 350,
-                damping: 22,
-            }}
-            className="group relative flex h-[120px] min-w-[145px] flex-1 cursor-default flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/[0.11] bg-[#08121f]/90 px-4 backdrop-blur-xl"
-        >
-            {/* Ambient card glow */}
-            <div
-                className="pointer-events-none absolute bottom-[-35px] left-1/2 h-20 w-28 -translate-x-1/2 rounded-full opacity-20 blur-3xl transition-all duration-300 group-hover:opacity-80"
-                style={{ backgroundColor: skill.color }}
-            />
-
-            {/* Logo */}
-            <Icon
-                className="relative z-10 text-[42px] transition-all duration-300 group-hover:scale-110"
-                style={{
-                    color: skill.color,
-                    filter: `drop-shadow(0 0 10px ${skill.color}45)`,
-                }}
-            />
-
-            {/* Name */}
-            <span className="relative z-10 mt-3 text-sm font-semibold text-slate-300 transition-colors duration-300 group-hover:text-white">
-                {skill.name}
-            </span>
-
-            {/* Bottom neon line */}
-            <span
-                className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-[72%]"
-                style={{
-                    backgroundColor: skill.color,
-                    boxShadow: `0 0 14px ${skill.color}`,
-                }}
-            />
-        </motion.div>
-    );
-}
+const allSkills: Skill[] = rawSkillGroups.flatMap((group) =>
+    group.skills.map((s) => ({ ...s, group: group.title }))
+);
 
 export default function Skills() {
+    const [selectedCategory, setSelectedCategory] = useState<string>("ALL");
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const filteredSkills = useMemo(() => {
+        return allSkills.filter((skill) => {
+            const matchesCategory =
+                selectedCategory === "ALL" || skill.group === selectedCategory;
+            const matchesSearch =
+                skill.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                skill.group.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+        });
+    }, [selectedCategory, searchQuery]);
+
+    const categories = ["ALL", "AI / ML", "LANGUAGES", "FRAMEWORKS", "DATABASE", "TOOLS"];
+
     return (
         <section
             id="skills"
-            className="relative min-h-screen overflow-hidden bg-[#030711] px-5 py-28 md:px-10 lg:px-12"
+            className="relative overflow-hidden bg-[#030711] px-5 py-28 md:px-10 lg:px-12"
         >
-            {/* Background */}
+            {/* Background Atmosphere */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute left-[55%] top-[5%] h-[600px] w-[600px] rounded-full bg-cyan-500/[0.035] blur-[150px]" />
-
-                <div className="absolute right-[-220px] top-[-100px] h-[700px] w-[700px] rounded-full border border-cyan-400/[0.07]" />
-
-                <div className="absolute right-[-120px] top-[-20px] h-[520px] w-[520px] rounded-full border border-cyan-400/[0.06]" />
-
-                <div className="absolute right-[-30px] top-[70px] h-[350px] w-[350px] rounded-full border border-cyan-400/[0.05]" />
+                <div className="absolute left-[50%] top-[10%] h-[550px] w-[550px] -translate-x-1/2 rounded-full bg-cyan-500/[0.035] blur-[160px]" />
+                <div className="absolute right-[-100px] top-[20%] h-[500px] w-[500px] rounded-full border border-cyan-400/[0.06]" />
             </div>
 
-            <div className="relative mx-auto max-w-[1500px]">
+            <div className="relative mx-auto max-w-7xl">
                 {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 35 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
+                    className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
-                    {/* Badge */}
-                    <div className="mb-5 inline-flex rounded-full border border-cyan-400/50 bg-cyan-400/[0.035] px-7 py-2.5 shadow-[0_0_25px_rgba(34,211,238,0.08)]">
-                        <span className="text-xs font-bold tracking-[0.28em] text-cyan-300">
-                            SKILLS
-                        </span>
+                    <div>
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5">
+                            <Cpu size={13} className="text-cyan-300" />
+                            <span className="text-[11px] font-bold tracking-[0.24em] text-cyan-300">
+                                TECHNICAL STACK
+                            </span>
+                        </div>
+
+                        <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                            Skills &{" "}
+                            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                                Expertise
+                            </span>
+                        </h2>
+
+                        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
+                            Technologies, languages, and frameworks used across Machine Learning pipelines, backend services, and web development.
+                        </p>
                     </div>
 
-                    {/* Heading */}
-                    <h2 className="text-5xl font-semibold tracking-[-0.045em] text-white md:text-7xl">
-                        Tech{" "}
-                        <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                            Stack
-                        </span>
-                    </h2>
-
-                    <p className="mt-5 max-w-xl text-base leading-7 text-slate-400 md:text-lg">
-                        Technologies and tools I use to build practical AI, Machine
-                        Learning and Generative AI applications.
-                    </p>
-
-                    <div className="mt-7 h-[3px] w-20 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)]" />
+                    {/* Live Search Input */}
+                    <div className="relative w-full max-w-xs">
+                        <Search
+                            size={16}
+                            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+                        />
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Search skill (e.g. Python, React)..."
+                            className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-10 pr-4 text-xs text-white placeholder-slate-400 backdrop-blur-md outline-none transition-all focus:border-cyan-400/60 focus:bg-white/10 focus:ring-1 focus:ring-cyan-400/50"
+                        />
+                        {searchQuery && (
+                            <button
+                                type="button"
+                                onClick={() => setSearchQuery("")}
+                                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 hover:text-white"
+                            >
+                                Clear
+                            </button>
+                        )}
+                    </div>
                 </motion.div>
 
-                {/* Skill rows */}
-                <div className="mt-16 space-y-4">
-                    {skillGroups.map((group, index) => {
-                        const GroupIcon = group.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
-
+                {/* Category Filter Buttons */}
+                <div className="mt-8 flex flex-wrap gap-2 border-b border-white/10 pb-6">
+                    {categories.map((cat) => {
+                        const isSelected = selectedCategory === cat;
                         return (
-                            <motion.div
-                                key={group.title}
-                                initial={{ opacity: 0, y: 25 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.08,
-                                }}
-                                className="rounded-[26px] border border-cyan-400/[0.14] bg-[#050d18]/75 p-3 backdrop-blur-xl md:p-4"
+                            <button
+                                key={cat}
+                                type="button"
+                                onClick={() => setSelectedCategory(cat)}
+                                className={`rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider transition-all ${
+                                    isSelected
+                                        ? "bg-cyan-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
+                                        : "border border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+                                }`}
                             >
-                                <div className="grid min-h-[145px] gap-4 md:grid-cols-[300px_1fr] md:items-center">
-                                    {/* Category */}
-                                    <div className="flex h-full items-center gap-5 border-b border-white/[0.08] px-5 md:border-b-0 md:border-r">
-                                        <GroupIcon className="h-8 w-8 text-cyan-300" />
-
-                                        <span className="text-sm font-bold tracking-[0.17em] text-cyan-300">
-                                            {group.title}
-                                        </span>
-                                    </div>
-
-                                    {/* Skill cards */}
-                                    <div className="flex flex-wrap gap-3 px-1 py-1">
-                                        {group.skills.map((skill) => (
-                                            <SkillCard
-                                                key={skill.name}
-                                                skill={skill}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
+                                {cat}
+                            </button>
                         );
                     })}
                 </div>
 
-                {/* Bottom line */}
-                <motion.div
-                    initial={{ opacity: 0, scaleX: 0 }}
-                    whileInView={{ opacity: 1, scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    className="mt-16 h-px origin-left bg-gradient-to-r from-cyan-400/50 via-cyan-400/10 to-transparent"
-                />
+                {/* Skills Grid */}
+                <div className="mt-10">
+                    {filteredSkills.length === 0 ? (
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-12 text-center">
+                            <p className="text-sm text-slate-400">
+                                No skills found matching "{searchQuery}".
+                            </p>
+                        </div>
+                    ) : (
+                        <motion.div
+                            layout
+                            className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+                        >
+                            <AnimatePresence mode="popLayout">
+                                {filteredSkills.map((skill) => {
+                                    const Icon = skill.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+                                    return (
+                                        <motion.div
+                                            layout
+                                            key={skill.name}
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.85 }}
+                                            whileHover={{ y: -4, scale: 1.02 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="group relative flex h-28 flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#071120]/80 p-4 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-cyan-400/40"
+                                        >
+                                            {/* Subtle glow beneath icon */}
+                                            <div
+                                                className="pointer-events-none absolute -bottom-4 h-14 w-14 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-60"
+                                                style={{ backgroundColor: skill.color }}
+                                            />
+
+                                            <Icon
+                                                className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                                                style={{
+                                                    color: skill.color,
+                                                    filter: `drop-shadow(0 0 8px ${skill.color}35)`,
+                                                }}
+                                            />
+
+                                            <span className="mt-2.5 text-center text-xs font-semibold text-slate-200 transition-colors group-hover:text-white">
+                                                {skill.name}
+                                            </span>
+
+                                            <span className="text-[9px] font-medium uppercase tracking-wider text-slate-500">
+                                                {skill.group}
+                                            </span>
+
+                                            {/* Bottom accent glow */}
+                                            <span
+                                                className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-3/5"
+                                                style={{
+                                                    backgroundColor: skill.color,
+                                                    boxShadow: `0 0 10px ${skill.color}`,
+                                                }}
+                                            />
+                                        </motion.div>
+                                    );
+                                })}
+                            </AnimatePresence>
+                        </motion.div>
+                    )}
+                </div>
             </div>
         </section>
     );

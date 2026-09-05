@@ -1,111 +1,174 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail, Copy, Check, MapPin, Clock, Send } from "lucide-react";
 
 const links = [
     {
         label: "GitHub",
         icon: FaGithub,
+        handle: "github.com/Deepanshu779",
         href: "https://github.com/Deepanshu779",
     },
     {
         label: "LinkedIn",
         icon: FaLinkedin,
+        handle: "linkedin.com/in/deepanshu-kumar-pandit",
         href: "https://www.linkedin.com/in/deepanshu-kumar-pandit/",
     },
     {
         label: "Email",
         icon: Mail,
+        handle: "deepanshukumarpandit2024@gmail.com",
         href: "mailto:deepanshukumarpandit2024@gmail.com",
     },
 ];
 
 function Contact() {
+    const [copied, setCopied] = useState(false);
+    const emailAddress = "deepanshukumarpandit2024@gmail.com";
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(emailAddress);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+    };
+
     return (
         <section
             id="contact"
-            className="relative overflow-hidden bg-[#080b12] px-6 pb-10 pt-32 md:px-10 lg:px-12"
+            className="relative overflow-hidden bg-[#030711] px-5 pb-12 pt-28 md:px-10 lg:px-12"
         >
-            {/* Ambient glow */}
-            <div className="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/[0.035] blur-[140px]" />
+            {/* Ambient Atmosphere */}
+            <div className="pointer-events-none absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/[0.04] blur-[160px]" />
 
             <div className="relative mx-auto max-w-7xl">
-
-                {/* Heading */}
+                {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p className="mb-8 text-xs tracking-[0.3em] text-cyan-300">
-                        07 / CONTACT
-                    </p>
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5">
+                        <Mail size={13} className="text-cyan-300" />
+                        <span className="text-[11px] font-bold tracking-[0.24em] text-cyan-300">
+                            07 / GET IN TOUCH
+                        </span>
+                    </div>
 
-                    <h2 className="max-w-5xl text-[clamp(4rem,11vw,11rem)] font-light leading-[0.78] tracking-[-0.07em]">
+                    <h2 className="text-5xl font-black uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-6xl md:text-8xl">
                         LET'S BUILD
                         <br />
-                        <span className="text-white/30">SOMETHING</span>
+                        <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-blue-400 bg-clip-text text-transparent">
+                            SOMETHING
+                        </span>
                         <br />
                         USEFUL.
                     </h2>
                 </motion.div>
 
-                {/* CTA */}
+                {/* Main Content Grid */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.15 }}
-                    className="mt-20 grid gap-12 border-t border-white/10 pt-10 md:grid-cols-[1fr_auto]"
+                    className="mt-16 grid gap-12 border-t border-white/10 pt-12 lg:grid-cols-[1.2fr_0.8fr]"
                 >
+                    {/* Left Column: Direct Action & Location Card */}
                     <div>
-                        <p className="max-w-xl text-base leading-8 text-white/40 md:text-lg">
-                            Have an idea, project, or opportunity you'd like to
-                            discuss? I'm always interested in building practical
-                            technology and exploring new ideas in AI and software.
+                        <p className="max-w-xl text-base leading-relaxed text-slate-300/80 md:text-lg">
+                            Have an exciting project, an internship opportunity, or a problem you'd like to collaborate on? I'm always open to discussing new opportunities in AI, Machine Learning, and software engineering.
                         </p>
 
-                        <a
-                            href="mailto:deepanshukumarpandit2024@gmail.com"
-                            className="group mt-8 inline-flex items-center gap-4 text-lg font-light transition-colors duration-300 hover:text-cyan-300 md:text-2xl"
-                        >
-                            deepanshukumarpandit2024@gmail.com
+                        {/* Direct Email Action Button */}
+                        <div className="mt-8 flex flex-wrap items-center gap-4">
+                            <a
+                                href={`mailto:${emailAddress}`}
+                                className="group flex h-13 items-center gap-3 rounded-full bg-cyan-400 px-6 font-bold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.3)] transition-all hover:bg-cyan-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.5)]"
+                            >
+                                <Send size={16} />
+                                <span>Send Email Directly</span>
+                                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            </a>
 
-                            <ArrowUpRight
-                                size={20}
-                                strokeWidth={1.2}
-                                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                            />
-                        </a>
+                            <button
+                                type="button"
+                                onClick={handleCopy}
+                                className="flex h-13 items-center gap-2.5 rounded-full border border-cyan-400/35 bg-white/[0.03] px-5 text-xs font-semibold text-slate-200 backdrop-blur-md transition-all hover:border-cyan-300 hover:bg-cyan-400/10 hover:text-white"
+                            >
+                                {copied ? (
+                                    <>
+                                        <Check size={16} className="text-emerald-400" />
+                                        <span className="text-emerald-300">Copied Address!</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Copy size={16} className="text-cyan-300" />
+                                        <span>Copy Email Address</span>
+                                    </>
+                                )}
+                            </button>
+                        </div>
+
+                        {/* Location & Status Card */}
+                        <div className="mt-10 grid gap-4 sm:grid-cols-2 max-w-lg">
+                            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#071120]/60 p-4">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                                    <MapPin size={18} />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Location</p>
+                                    <p className="text-xs font-semibold text-white">Delhi NCR, India</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#071120]/60 p-4">
+                                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                                    <Clock size={18} />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Time Zone</p>
+                                    <p className="text-xs font-semibold text-white">IST (UTC +5:30)</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Social links */}
-                    <div className="flex flex-col">
+                    {/* Right Column: Social Profiles List */}
+                    <div className="flex flex-col gap-3">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
+                            CONNECT & NETWORK
+                        </p>
+
                         {links.map((link) => {
                             const Icon = link.icon;
-
                             return (
                                 <a
                                     key={link.label}
                                     href={link.href}
                                     target={link.href.startsWith("http") ? "_blank" : undefined}
-                                    rel={
-                                        link.href.startsWith("http")
-                                            ? "noopener noreferrer"
-                                            : undefined
-                                    }
-                                    className="group flex min-w-[220px] items-center justify-between border-b border-white/10 py-5"
+                                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                    className="group flex items-center justify-between rounded-2xl border border-white/10 bg-[#071120]/70 p-5 backdrop-blur-xl transition-all hover:border-cyan-400/40 hover:bg-[#071120]"
                                 >
-                                    <span className="flex items-center gap-4 text-sm tracking-[0.15em] text-white/50 transition-colors duration-300 group-hover:text-white">
-                                        <Icon size={18} strokeWidth={1.2} />
-                                        {link.label.toUpperCase()}
-                                    </span>
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-300 transition-colors group-hover:bg-cyan-400/15 group-hover:text-cyan-300">
+                                            <Icon size={18} />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm font-bold text-white group-hover:text-cyan-200 transition-colors">
+                                                {link.label}
+                                            </p>
+                                            <p className="text-xs text-slate-400">
+                                                {link.handle}
+                                            </p>
+                                        </div>
+                                    </div>
 
                                     <ArrowUpRight
-                                        size={16}
-                                        strokeWidth={1.2}
-                                        className="text-white/20 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-cyan-300"
+                                        size={18}
+                                        className="text-slate-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan-300"
                                     />
                                 </a>
                             );
@@ -113,14 +176,13 @@ function Contact() {
                     </div>
                 </motion.div>
 
-                {/* Footer */}
-                <div className="mt-32 border-t border-white/10 pt-6">
-                    <div className="flex flex-col justify-between gap-4 text-[10px] tracking-[0.2em] text-white/25 md:flex-row">
-                        <p>© {new Date().getFullYear()} DEEPANSHU KUMAR PANDIT</p>
-
-                        <p>AI / ML · SOFTWARE · GENAI</p>
-
-                        <p>BUILT WITH REACT</p>
+                {/* Footer Section */}
+                <div className="mt-28 border-t border-white/10 pt-8">
+                    <div className="flex flex-col items-center justify-between gap-4 text-center text-xs tracking-wider text-slate-500 sm:flex-row sm:text-left">
+                        <p>© {new Date().getFullYear()} Deepanshu Kumar Pandit. All rights reserved.</p>
+                        <p className="text-slate-400">
+                            Built with <span className="text-cyan-300">React</span>, <span className="text-cyan-300">TypeScript</span> & <span className="text-cyan-300">Tailwind CSS</span>
+                        </p>
                     </div>
                 </div>
             </div>
