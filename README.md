@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  A modern, interactive portfolio showcasing my projects, technical skills, experience, and credentials.
+  A modern, interactive developer portfolio built to showcase projects, technical skills, experience, and professional work.
 </p>
 
 <p align="center">
@@ -15,83 +15,93 @@
 
 ---
 
-## About
+## Overview
 
-This repository contains my personal developer portfolio, built to present my work and technical journey in one place.
+This repository contains my personal developer portfolio — a central place to present my technical journey, selected projects, experience, and the technologies I work with.
 
-I am a B.Tech student focused on building practical software with **JavaScript, TypeScript, modern web technologies, AI/ML, and Generative AI**. I enjoy turning ideas into useful, responsive, and well-engineered applications.
+I am a **B.Tech Computer Science & Engineering (AI) student** interested in building practical software across **web development, AI/ML, Generative AI, and interactive user experiences**. I enjoy taking an idea from concept to a usable application with a strong focus on clean interfaces and real-world utility.
 
-The portfolio highlights:
+The portfolio is designed to make my work easy to explore through dedicated sections for projects, skills, experience, credentials, and contact information.
 
-- Selected software and AI projects
-- Technical skills and technology stack
-- Professional and internship experience
-- Certifications and credentials
-- Contact and professional profiles
+## Highlights
+
+- Project-focused portfolio presentation
+- Responsive modern UI
+- Interactive motion and 3D elements
+- Technology and skills showcase
+- Experience and credentials sections
+- Direct links to professional profiles
 
 ## Featured Projects
 
-| Project | Description |
+| Project | Focus |
 | --- | --- |
-| **KaathiRent** | A rental-focused web application designed around a practical booking and rental experience. |
-| **MedCore** | A healthcare-oriented application focused on delivering a useful digital experience for medical workflows. |
-| **MediAI 2.0** | An AI-focused project combining modern web development with Generative AI concepts. |
-| **Pricevana** | A price-oriented web application built to provide a practical product discovery experience. |
+| **KaathiRent** | Rental-focused web application and booking experience |
+| **MedCore** | Healthcare-oriented digital application |
+| **MediAI 2.0** | AI-focused application combining web development and Generative AI concepts |
+| **Pricevana** | Product price and discovery-focused web application |
 
-> More projects and details are available directly on the portfolio.
+> The portfolio itself contains additional project details and the latest work.
 
-## Tech Stack
+## Technology Stack
 
 ### Frontend
-- React
+
+- React 19
 - TypeScript
 - JavaScript
 - HTML5
 - CSS3
 - Tailwind CSS
 
-### UI & Animation
+### UI, Motion & Icons
+
 - Framer Motion
 - Lucide React
 - React Icons
 
-### 3D & Interactive Experiences
+### 3D & Interactive Graphics
+
 - Three.js
 - React Three Fiber
 - React Three Drei
 
-### Development Tools
+### Development Tooling
+
 - Vite
 - ESLint
-- Git & GitHub
+- Git
+- GitHub
 
-### AI / ML
+### AI / ML Focus
+
 - Artificial Intelligence
 - Machine Learning
 - Generative AI
 - AI-powered application development
 
-## Portfolio Architecture
+## Project Structure
 
 ```text
 Portfolio/
 ├── public/
-│   ├── projects/          # Project showcase images
+│   ├── projects/          # Project showcase assets
 │   ├── profile.png        # Profile image
 │   ├── resume.pdf         # Resume
 │   └── favicon.svg
 │
 ├── src/
-│   ├── components/        # Shared UI components
-│   ├── sections/          # Portfolio sections
-│   ├── three/             # Three.js / 3D experience
-│   ├── assets/            # Local assets
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
+│   ├── components/        # Reusable UI components
+│   ├── sections/          # Main portfolio sections
+│   ├── three/             # Three.js / 3D components
+│   ├── assets/            # Local application assets
+│   ├── App.tsx            # Root application component
+│   ├── main.tsx           # Application entry point
+│   └── index.css          # Global styles
 │
 ├── index.html
 ├── package.json
+├── tsconfig.json
 └── vite.config.ts
 ```
 
@@ -99,79 +109,83 @@ Portfolio/
 
 ### Prerequisites
 
-Make sure you have **Node.js** and **npm** installed.
+Install **Node.js** and **npm** before running the project locally.
 
-### Installation
+### Clone the repository
 
 ```bash
 git clone https://github.com/Deepanshu779/Portfolio.git
 cd Portfolio
+```
+
+### Install dependencies
+
+```bash
 npm install
 ```
 
-### Run locally
+### Start the development server
 
 ```bash
 npm run dev
 ```
 
-The development server will start through Vite. Open the local URL shown in your terminal.
+Vite will provide the local development URL in the terminal.
 
-### Production build
+### Build for production
 
 ```bash
 npm run build
 ```
 
-### Preview production build
+### Preview the production build
 
 ```bash
 npm run preview
 ```
 
-### Lint
+### Run lint checks
 
 ```bash
 npm run lint
 ```
 
-## Design & Experience
+## Design Approach
 
-The portfolio uses a dark, technology-focused visual system with cyan accents, responsive layouts, motion, and interactive 3D elements.
+The portfolio combines a **dark, technology-focused visual system** with responsive layouts, purposeful motion, and interactive 3D elements.
 
-Key experience goals include:
+The design goals are simple:
 
-- **Clear personal branding** — quickly communicate who I am and what I build.
-- **Project-first presentation** — make practical work easy to discover.
-- **Interactive 3D hero** — add personality without replacing the content.
-- **Responsive design** — provide a consistent experience across screen sizes.
-- **Motion with purpose** — use animation to support navigation and visual hierarchy.
-- **Accessibility awareness** — respect reduced-motion preferences and maintain usable interactions.
+- **Personal branding:** make the developer profile immediately understandable.
+- **Project-first presentation:** surface practical work instead of overwhelming visitors with information.
+- **Interactive experience:** use motion and 3D selectively to add depth and personality.
+- **Responsive layout:** maintain a consistent experience across desktop and smaller screens.
+- **Readable structure:** keep navigation, content hierarchy, and calls to action clear.
 
-## Sections
+## Portfolio Sections
 
 1. **Hero** — Introduction, role, social links, and primary call-to-action.
-2. **About** — Background and development focus.
-3. **Skills** — Technologies and technical capabilities.
-4. **Projects** — Selected applications and project work.
+2. **About** — Background, interests, and development focus.
+3. **Skills** — Technologies and technical areas.
+4. **Projects** — Selected software and AI projects.
 5. **Experience** — Internship and professional experience.
 6. **Credentials** — Certifications and achievements.
-7. **Contact** — Email and professional networking links.
+7. **Contact** — Professional contact and networking links.
 
 ## Connect
 
-If you'd like to discuss a project, collaboration, internship, or development opportunity:
+For projects, collaborations, internships, or development opportunities:
 
 - **GitHub:** [Deepanshu779](https://github.com/Deepanshu779)
 - **LinkedIn:** [Deepanshu Kumar Pandit](https://www.linkedin.com/in/deepanshu-kumar-pandit/)
 - **Email:** deepanshukumarpandit2024@gmail.com
 
-## License
+## License & Usage
 
-This portfolio is a personal project. The source code is available for reference, but personal assets, profile information, resume content, and project materials should not be reused without permission.
+This is a personal portfolio project. The code may be referenced for learning and inspiration, but personal assets, profile information, resume content, and project materials should not be reused or redistributed as personal work without permission.
 
 ---
 
 <p align="center">
-  Built with React, TypeScript, Tailwind CSS, Framer Motion & Three.js.
+  Built with <strong>React, TypeScript, Tailwind CSS, Framer Motion & Three.js</strong>.
 </p>
