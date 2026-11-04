@@ -84,10 +84,8 @@ function Hero() {
         {/* Portrait as an editorial cover, not a dashboard widget */}
         <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.12, ease }} className="relative mx-auto w-full max-w-[540px]">
           <div className="absolute inset-[8%] rounded-[48%] bg-violet-400/15 blur-[90px]" />
-          <div className="relative aspect-[.91/1] overflow-hidden rounded-[48%_48%_12px_12px] border border-white/10 bg-gradient-to-br from-white/[0.08] via-[#15131b] to-[#09090b]">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(167,139,250,.18),transparent_55%)]" />
-            <div className="absolute inset-x-0 bottom-0 z-10 h-1/3 bg-gradient-to-t from-[#070707] via-[#070707]/55 to-transparent" />
-            <motion.img src="/profile.png" alt="Portrait of Deepanshu Kumar Pandit" loading="eager" fetchPriority="high" animate={reduceMotion ? undefined : { y: [0, -7, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 h-full w-full object-contain object-bottom drop-shadow-[0_20px_60px_rgba(0,0,0,.55)]" />
+          <div className="relative aspect-[.91/1] overflow-hidden rounded-[48%_48%_12px_12px] border border-white/10 bg-transparent">
+            <motion.img src="/profile.png" alt="Portrait of Deepanshu Kumar Pandit" loading="eager" fetchPriority="high" animate={reduceMotion ? undefined : { y: [0, -4, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 h-full w-full object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,0,0,.22)]" />
             <div className="absolute left-5 top-5 z-20 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-2 text-[10px] uppercase tracking-[.18em] text-white/65 backdrop-blur-md sm:left-7 sm:top-7">
               <Sparkles size={12} className="text-violet-200" /> Curious by default
             </div>
