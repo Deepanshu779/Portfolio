@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Code2, Download, Github, Linkedin, Sparkles } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Code2, Download, Sparkles } from "lucide-react";
 
 const roles = ["AI / ML DEVELOPER", "GENERATIVE AI BUILDER", "FULL-STACK DEVELOPER"];
 
@@ -73,8 +73,8 @@ function Hero() {
           </motion.div>
 
           <motion.div {...rise(0.4)} className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs text-white/45">
-            <a href="https://github.com/Deepanshu779" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-white"><Github size={15} /> GitHub <ArrowUpRight size={12} /></a>
-            <a href="https://www.linkedin.com/in/deepanshu-kumar-pandit/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-white"><Linkedin size={15} /> LinkedIn <ArrowUpRight size={12} /></a>
+            <a href="https://github.com/Deepanshu779" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-white"><Code2 size={15} /> GitHub <ArrowUpRight size={12} /></a>
+            <a href="https://www.linkedin.com/in/deepanshu-kumar-pandit/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-white"><ArrowUpRight size={15} /> LinkedIn <ArrowUpRight size={12} /></a>
             <span className="hidden h-4 w-px bg-white/15 sm:block" />
             <span className="inline-flex items-center gap-2"><Code2 size={15} /> React · Python · AI/ML</span>
           </motion.div>
