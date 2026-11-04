@@ -138,8 +138,8 @@ export default function Skills() {
         >
             {/* Background Atmosphere */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute left-[50%] top-[10%] h-[550px] w-[550px] -translate-x-1/2 rounded-full bg-cyan-500/[0.035] blur-[160px]" />
-                <div className="absolute right-[-100px] top-[20%] h-[500px] w-[500px] rounded-full border border-cyan-400/[0.06]" />
+                <div className="absolute left-[50%] top-[10%] h-[550px] w-[550px] -translate-x-1/2 rounded-full bg-violet-500/[0.035] blur-[160px]" />
+                <div className="absolute right-[-100px] top-[20%] h-[500px] w-[500px] rounded-full border border-violet-400/[0.06]" />
             </div>
 
             <div className="relative mx-auto max-w-7xl">
@@ -152,16 +152,16 @@ export default function Skills() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5">
-                            <Cpu size={13} className="text-cyan-300" />
-                            <span className="text-[11px] font-bold tracking-[0.24em] text-cyan-300">
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/5 px-4 py-1.5">
+                            <Cpu size={13} className="text-violet-300" />
+                            <span className="text-[11px] font-bold tracking-[0.24em] text-violet-300">
                                 TECHNICAL STACK
                             </span>
                         </div>
 
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                             Skills &{" "}
-                            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-violet-300 to-blue-400 bg-clip-text text-transparent">
                                 Expertise
                             </span>
                         </h2>
@@ -182,7 +182,7 @@ export default function Skills() {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search skill (e.g. Python, React)..."
-                            className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-10 pr-4 text-xs text-white placeholder-slate-400 backdrop-blur-md outline-none transition-all focus:border-cyan-400/60 focus:bg-white/10 focus:ring-1 focus:ring-cyan-400/50"
+                            className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-10 pr-4 text-xs text-white placeholder-slate-400 backdrop-blur-md outline-none transition-all focus:border-violet-400/60 focus:bg-white/10 focus:ring-1 focus:ring-violet-400/50"
                         />
                         {searchQuery && (
                             <button
@@ -207,7 +207,7 @@ export default function Skills() {
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider transition-all ${
                                     isSelected
-                                        ? "bg-cyan-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
+                                        ? "bg-violet-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
                                         : "border border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white"
                                 }`}
                             >
@@ -242,7 +242,7 @@ export default function Skills() {
                                             exit={{ opacity: 0, scale: 0.85 }}
                                             whileHover={{ y: -4, scale: 1.02 }}
                                             transition={{ duration: 0.2 }}
-                                            className="group relative flex h-28 flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#071120]/80 p-4 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-cyan-400/40"
+                                            className="group relative flex h-28 flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#071120]/80 p-4 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-violet-400/40"
                                         >
                                             {/* Subtle glow beneath icon */}
                                             <div
