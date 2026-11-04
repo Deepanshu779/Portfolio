@@ -8,38 +8,47 @@ const experiences = [
     {
         period: "JUN 2026 — AUG 2026",
         role: "Generative AI Virtual Intern",
-        company: "IBM SkillsBuild / FSP",
+        company: "AKTU PBEL 3.0 × IBM / FutureSkills Prime",
         type: "VIRTUAL INTERNSHIP",
         description:
-            "Completed a Generative AI virtual internship through FutureSkills Prime. Internship learning covered AI/ML concepts and generative AI, with MediAI 2.0 developed as a related project.",
-        tags: ["Generative AI", "NLP", "Deep Learning", "Python", "Healthcare AI"],
+            "Completed the PBEL 3.0 virtual internship in Generative AI (24 June–27 August 2026), exploring Python, AI/ML, deep learning, NLP, and Generative AI concepts. Developed MediAI 2.0 as a related healthcare-focused project.",
+        tags: ["Generative AI", "Python", "AI/ML", "NLP", "Healthcare AI"],
     },
     {
         period: "JUN 2026 — JUL 2026",
         role: "Tech Intern",
-        company: "The Indus Group of Co.",
+        company: "The Indus Group Co.",
         type: "INTERNSHIP",
         description:
-            "Contributed to the company’s web platform using Next.js, JavaScript, and Tailwind CSS. Worked on interactive Freight Cost Estimator and Franchise ROI Calculator tools.",
-        tags: ["Next.js", "Tailwind CSS", "JavaScript", "Agile / GitHub"],
+            "Contributed to the company's live website and web tools using frontend technologies. Work included UI improvements, feature development, accessibility-minded interactions, and collaboration through GitHub and code review. Contributed to interactive Freight Cost Estimator and Franchise ROI Calculator tools.",
+        tags: ["React", "Next.js", "JavaScript", "Tailwind CSS", "GitHub"],
     },
     {
         period: "JAN 2026 — JUL 2026",
-        role: "Python Developer",
+        role: "Python Developer Intern",
         company: "The Skybrisk",
         type: "INTERNSHIP",
         description:
-            "Python development internship focused on building applications and automation scripts, with exposure to backend services and REST API implementation.",
-        tags: ["Python", "REST APIs", "Backend Services", "Testing"],
+            "Completed a six-month Python Developer internship program. Built programming experience through development tasks, strengthening Python, problem-solving, and software development practices.",
+        tags: ["Python", "Software Development", "Problem Solving"],
+    },
+    {
+        period: "6-WEEK PROGRAM • COMPLETED MAR 2026",
+        role: "C Programming Intern",
+        company: "Axcentra",
+        type: "INTERNSHIP",
+        description:
+            "Completed a six-week online C Programming internship program. Focused on strengthening programming fundamentals and structured problem-solving.",
+        tags: ["C", "Programming Fundamentals", "Problem Solving"],
     },
     {
         period: "DEC 2025 — JAN 2026",
         role: "AI & ML Intern",
-        company: "Edunet Foundation & IBM SkillsBuild",
+        company: "Edunet Foundation × AICTE × IBM SkillsBuild",
         type: "INTERNSHIP",
         description:
-            "Completed an AI/ML internship program with Edunet Foundation and IBM SkillsBuild. Built a Streamlit-based mental health companion chatbot exploring NLP and supportive wellness guidance.",
-        tags: ["Artificial Intelligence", "Machine Learning", "NLP", "Streamlit"],
+            "Completed a six-week Artificial Intelligence and Machine Learning internship. Developed a Streamlit-based mental health companion project while learning AI/ML concepts and application development.",
+        tags: ["Artificial Intelligence", "Machine Learning", "Python", "Streamlit"],
     },
 ];
 
