@@ -45,7 +45,8 @@ function Hero() {
           <motion.p {...rise(0.06)} className="mb-3 text-xs font-medium uppercase tracking-[.36em] text-white/45">Hello, I’m</motion.p>
           <motion.h1 {...rise(0.12)} className="max-w-4xl text-[clamp(3.7rem,9.3vw,8.8rem)] font-semibold uppercase leading-[.78] tracking-[-.085em]">
             Deepanshu
-            <span className="mt-3 block bg-gradient-to-r from-white via-white/80 to-white/35 bg-clip-text pb-3 text-transparent">Pandit<span className="text-violet-300">.</span></span>
+            <span className="mt-2 block bg-gradient-to-r from-white via-white/80 to-white/35 bg-clip-text pb-2 text-transparent">Kumar</span>
+            <span className="mt-2 block bg-gradient-to-r from-white via-white/80 to-white/35 bg-clip-text pb-3 text-transparent">Pandit<span className="text-violet-300">.</span></span>
           </motion.h1>
 
           <motion.div {...rise(0.2)} className="mt-8 flex min-h-7 items-center gap-3">
