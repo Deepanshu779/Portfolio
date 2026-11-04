@@ -118,10 +118,10 @@ function ProjectCard({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.45, delay: index * 0.05 }}
-            className="group relative overflow-hidden rounded-[28px] border border-cyan-400/[0.14] bg-[#050d18]/85 shadow-[0_10px_35px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/40"
+            className="group relative overflow-hidden rounded-[28px] border border-violet-400/[0.14] bg-[#050d18]/85 shadow-[0_10px_35px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-300 hover:border-violet-400/40"
         >
             {/* Ambient hover glow */}
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-cyan-400/[0.05] blur-[100px] transition-all duration-700 group-hover:bg-cyan-400/[0.12]" />
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet-400/[0.05] blur-[100px] transition-all duration-700 group-hover:bg-violet-400/[0.12]" />
 
             <div className="grid lg:grid-cols-[1.05fr_1fr]">
                 {/* Project Media Showcase */}
@@ -138,9 +138,9 @@ function ProjectCard({
                     <div className="absolute inset-0 bg-gradient-to-t from-[#030711] via-[#030711]/30 to-transparent" />
 
                     {/* Project Number Chip */}
-                    <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-cyan-400/30 bg-[#030711]/75 px-4 py-1.5 backdrop-blur-md">
-                        <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_8px_rgba(34,211,238,1)]" />
-                        <span className="font-mono text-xs font-semibold tracking-[0.2em] text-cyan-300">
+                    <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-violet-400/30 bg-[#030711]/75 px-4 py-1.5 backdrop-blur-md">
+                        <span className="h-1.5 w-1.5 rounded-full bg-violet-200 shadow-[0_0_8px_rgba(167,139,250,1)]" />
+                        <span className="font-mono text-xs font-semibold tracking-[0.2em] text-violet-200">
                             PROJECT / {project.number}
                         </span>
                     </div>
@@ -152,7 +152,7 @@ function ProjectCard({
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`Open live demo of ${project.title}`}
-                            className="absolute bottom-6 right-6 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-300/40 bg-[#030711]/80 text-cyan-300 shadow-[0_0_15px_rgba(0,180,255,0.2)] backdrop-blur-md transition-all hover:scale-110 hover:bg-cyan-400 hover:text-slate-950"
+                            className="absolute bottom-6 right-6 flex h-11 w-11 items-center justify-center rounded-full border border-violet-200/40 bg-[#030711]/80 text-violet-200 shadow-[0_0_15px_rgba(167,139,250,0.2)] backdrop-blur-md transition-all hover:scale-110 hover:bg-violet-400 hover:text-slate-950"
                         >
                             <ArrowUpRight size={18} />
                         </a>
@@ -164,7 +164,7 @@ function ProjectCard({
                     <div>
                         {/* Category & Tags */}
                         <div className="mb-4 flex flex-wrap items-center gap-2.5">
-                            <span className="text-xs font-bold tracking-[0.2em] text-cyan-300">
+                            <span className="text-xs font-bold tracking-[0.2em] text-violet-200">
                                 {project.category}
                             </span>
                             <span className="text-white/20">•</span>
@@ -195,7 +195,7 @@ function ProjectCard({
                             {project.technologies.map((technology) => (
                                 <span
                                     key={technology}
-                                    className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.04] px-3 py-1 text-xs font-medium text-slate-300 transition-colors duration-300 group-hover:border-cyan-300/40 group-hover:text-cyan-200"
+                                    className="rounded-full border border-violet-200/20 bg-violet-200/[0.04] px-3 py-1 text-xs font-medium text-slate-300 transition-colors duration-300 group-hover:border-violet-200/40 group-hover:text-violet-100"
                                 >
                                     {technology}
                                 </span>
@@ -210,7 +210,7 @@ function ProjectCard({
                                 href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:border-cyan-300/50 hover:bg-cyan-400/10 hover:text-cyan-200"
+                                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:border-violet-200/50 hover:bg-violet-400/10 hover:text-violet-100"
                             >
                                 <Code2 size={15} />
                                 <span>Code Repository</span>
@@ -223,7 +223,7 @@ function ProjectCard({
                                 href={project.live}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.25)] transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.45)]"
+                                className="inline-flex items-center gap-2 rounded-full bg-violet-400 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.25)] transition-all duration-300 hover:bg-violet-200 hover:shadow-[0_0_30px_rgba(167,139,250,0.45)]"
                             >
                                 <ExternalLink size={15} />
                                 <span>Live Demo</span>
@@ -234,7 +234,7 @@ function ProjectCard({
             </div>
 
             {/* Glowing Accent Bar on Hover */}
-            <div className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.9)] transition-all duration-500 group-hover:w-[80%]" />
+            <div className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-violet-200 shadow-[0_0_18px_rgba(167,139,250,0.9)] transition-all duration-500 group-hover:w-[80%]" />
         </motion.article>
     );
 }
@@ -254,8 +254,8 @@ export default function Projects() {
         >
             {/* Background Atmosphere */}
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute -left-48 top-[20%] h-[500px] w-[500px] rounded-full bg-blue-500/[0.04] blur-[150px]" />
-                <div className="absolute -right-36 top-[15%] h-[500px] w-[500px] rounded-full bg-cyan-400/[0.04] blur-[150px]" />
+                <div className="absolute -left-48 top-[20%] h-[500px] w-[500px] rounded-full bg-violet-500/[0.04] blur-[150px]" />
+                <div className="absolute -right-36 top-[15%] h-[500px] w-[500px] rounded-full bg-violet-400/[0.04] blur-[150px]" />
             </div>
 
             <div className="relative mx-auto max-w-7xl">
@@ -268,22 +268,22 @@ export default function Projects() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5">
-                            <Sparkles size={13} className="text-cyan-300" />
-                            <span className="text-[11px] font-bold tracking-[0.24em] text-cyan-300">
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/5 px-4 py-1.5">
+                            <Sparkles size={13} className="text-violet-200" />
+                            <span className="text-[11px] font-bold tracking-[0.24em] text-violet-200">
                                 SELECTED WORK
                             </span>
                         </div>
 
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                             Featured{" "}
-                            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-violet-200 to-fuchsia-300 bg-clip-text text-transparent">
                                 Projects
                             </span>
                         </h2>
 
                         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-                            Real-world applications combining artificial intelligence, Machine Learning, and modern web architectures.
+                            A selection of experiments and products across AI, healthcare, and full-stack development—built to solve practical problems.
                         </p>
                     </div>
 
@@ -298,11 +298,11 @@ export default function Projects() {
                                     onClick={() => setSelectedCategory(cat.value)}
                                     className={`relative flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold tracking-wider transition-all ${
                                         isSelected
-                                            ? "bg-cyan-400 text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.35)]"
+                                            ? "bg-violet-400 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.35)]"
                                             : "border border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white"
                                     }`}
                                 >
-                                    <Layers size={13} className={isSelected ? "text-slate-950" : "text-cyan-300"} />
+                                    <Layers size={13} className={isSelected ? "text-slate-950" : "text-violet-200"} />
                                     <span>{cat.label}</span>
                                 </button>
                             );
