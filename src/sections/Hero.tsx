@@ -65,7 +65,7 @@ function Hero() {
           </motion.p>
 
           <motion.div {...rise(0.32)} className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#work" className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-violet-200">
+            <a href="#work" style={{ color: "#070707" }} className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold !text-[#070707] transition hover:bg-violet-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-200">
               Explore my work <ArrowUpRight size={17} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a href="/resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3.5 text-sm font-medium text-white/75 transition hover:border-white/35 hover:bg-white/[0.06] hover:text-white">
