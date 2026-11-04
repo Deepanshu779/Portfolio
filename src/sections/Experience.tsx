@@ -11,7 +11,7 @@ const experiences = [
         company: "IBM SkillsBuild / FSP",
         type: "VIRTUAL INTERNSHIP",
         description:
-            "Completed comprehensive Generative AI training covering Python, machine learning algorithms, ANN, CNN, NLP, tokenization, RNN, LSTM, sentiment analysis, and encoder-decoder architectures. Built MediAI 2.0 as the capstone internship project.",
+            "Completed a Generative AI virtual internship through FutureSkills Prime. Internship learning covered AI/ML concepts and generative AI, with MediAI 2.0 developed as a related project.",
         tags: ["Generative AI", "NLP", "Deep Learning", "Python", "Healthcare AI"],
     },
     {
@@ -20,7 +20,7 @@ const experiences = [
         company: "The Indus Group of Co.",
         type: "INTERNSHIP",
         description:
-            "Enhanced the corporate platform using Next.js, JavaScript, and Tailwind CSS. Engineered interactive Freight Cost Estimator and Franchise ROI Calculator web tools, collaborating within an agile team workflow.",
+            "Contributed to the company’s web platform using Next.js, JavaScript, and Tailwind CSS. Worked on interactive Freight Cost Estimator and Franchise ROI Calculator tools.",
         tags: ["Next.js", "Tailwind CSS", "JavaScript", "Agile / GitHub"],
     },
     {
@@ -29,7 +29,7 @@ const experiences = [
         company: "The Skybrisk",
         type: "INTERNSHIP",
         description:
-            "Developed Python applications and automation scripts emphasizing modular, testable, and maintainable architecture. Implemented and verified RESTful API endpoints and backend services.",
+            "Python development internship focused on building applications and automation scripts, with exposure to backend services and REST API implementation.",
         tags: ["Python", "REST APIs", "Backend Services", "Testing"],
     },
     {
@@ -38,7 +38,7 @@ const experiences = [
         company: "Edunet Foundation & IBM SkillsBuild",
         type: "INTERNSHIP",
         description:
-            "Completed a six-week AI/ML fellowship with AICTE and IBM SkillsBuild. Independently engineered a Streamlit mental-health companion chatbot utilizing natural language processing for emotional wellness guidance.",
+            "Completed an AI/ML internship program with Edunet Foundation and IBM SkillsBuild. Built a Streamlit-based mental health companion chatbot exploring NLP and supportive wellness guidance.",
         tags: ["Artificial Intelligence", "Machine Learning", "NLP", "Streamlit"],
     },
 ];
@@ -94,8 +94,8 @@ export default function Experience() {
         >
             {/* Ambient Background Glows */}
             <div className="pointer-events-none absolute inset-0">
-                <div className="absolute left-[10%] top-[30%] h-[450px] w-[450px] rounded-full bg-cyan-500/[0.03] blur-[150px]" />
-                <div className="absolute right-[5%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-blue-500/[0.03] blur-[150px]" />
+                <div className="absolute left-[10%] top-[30%] h-[450px] w-[450px] rounded-full bg-violet-500/[0.04] blur-[150px]" />
+                <div className="absolute right-[5%] bottom-[20%] h-[400px] w-[400px] rounded-full bg-fuchsia-500/[0.035] blur-[150px]" />
             </div>
 
             <div className="relative mx-auto max-w-7xl">
@@ -108,8 +108,8 @@ export default function Experience() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-b border-white/10 pb-8"
                 >
                     <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-4 py-1.5">
-                            <Sparkles size={13} className="text-cyan-300" />
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-300/25 bg-violet-300/5 px-4 py-1.5">
+                            <Sparkles size={13} className="text-violet-200" />
                             <span className="text-[11px] font-bold tracking-[0.24em] text-cyan-300">
                                 BACKGROUND & JOURNEY
                             </span>
@@ -117,7 +117,7 @@ export default function Experience() {
 
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                             Experience &{" "}
-                            <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-violet-200 to-fuchsia-300 bg-clip-text text-transparent">
                                 Education
                             </span>
                         </h2>
@@ -134,7 +134,7 @@ export default function Experience() {
                             onClick={() => setActiveTab("WORK")}
                             className={`flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-semibold tracking-wider transition-all ${
                                 activeTab === "WORK"
-                                    ? "bg-cyan-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
+                                    ? "bg-violet-200 text-slate-950 shadow-[0_0_15px_rgba(196,181,253,0.25)]"
                                     : "text-slate-300 hover:text-white"
                             }`}
                         >
@@ -147,7 +147,7 @@ export default function Experience() {
                             onClick={() => setActiveTab("EDUCATION")}
                             className={`flex items-center gap-2 rounded-xl px-4 py-2 text-xs font-semibold tracking-wider transition-all ${
                                 activeTab === "EDUCATION"
-                                    ? "bg-cyan-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
+                                    ? "bg-violet-200 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
                                     : "text-slate-300 hover:text-white"
                             }`}
                         >
@@ -183,7 +183,7 @@ export default function Experience() {
                                 className="relative"
                             >
                                 {/* Vertical Timeline Line */}
-                                <div className="absolute bottom-4 left-[15px] top-4 w-px bg-gradient-to-b from-cyan-400 via-cyan-400/20 to-transparent md:left-[19px]" />
+                                <div className="absolute bottom-4 left-[15px] top-4 w-px bg-gradient-to-b from-violet-300 via-violet-300/20 to-transparent md:left-[19px]" />
 
                                 <div className="space-y-10">
                                     {experiences.map((item, index) => (
@@ -195,15 +195,15 @@ export default function Experience() {
                                             className="relative pl-12 md:pl-16"
                                         >
                                             {/* Timeline Node */}
-                                            <div className="absolute left-0 top-1.5 flex h-8 w-8 items-center justify-center rounded-full border border-cyan-400/40 bg-[#060911] shadow-[0_0_12px_rgba(34,211,238,0.4)] md:left-1 md:h-9 md:w-9">
-                                                <div className="h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                                            <div className="absolute left-0 top-1.5 flex h-8 w-8 items-center justify-center rounded-full border border-violet-300/40 bg-[#060911] shadow-[0_0_12px_rgba(196,181,253,0.28)] md:left-1 md:h-9 md:w-9">
+                                                <div className="h-2.5 w-2.5 rounded-full bg-violet-200" />
                                             </div>
 
                                             {/* Experience Card */}
-                                            <div className="rounded-2xl border border-white/10 bg-[#081220]/80 p-6 shadow-[0_4px_25px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-cyan-400/30 md:p-8">
+                                            <div className="rounded-2xl border border-white/10 bg-[#081220]/80 p-6 shadow-[0_4px_25px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-violet-200/30 md:p-8">
                                                 <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
                                                     <div>
-                                                        <span className="inline-block rounded-md border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-cyan-300">
+                                                        <span className="inline-block rounded-md border border-violet-200/30 bg-violet-300/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-cyan-300">
                                                             {item.type}
                                                         </span>
                                                         <h3 className="mt-2 text-xl font-bold tracking-tight text-white md:text-2xl">
