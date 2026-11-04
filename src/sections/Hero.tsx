@@ -28,7 +28,7 @@ function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 opacity-[0.16]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px)", backgroundSize: "72px 72px", maskImage: "linear-gradient(to bottom, black, transparent 85%)" }} />
         <div className="absolute -right-32 top-[8%] h-[34rem] w-[34rem] rounded-full bg-violet-500/15 blur-[130px] sm:right-[4%]" />
-        <div className="absolute -bottom-40 left-[8%] h-[28rem] w-[28rem] rounded-full bg-cyan-400/[0.09] blur-[130px]" />
+        <div className="absolute -bottom-40 left-[8%] h-[28rem] w-[28rem] rounded-full bg-violet-400/[0.07] blur-[130px]" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#070707] to-transparent" />
       </div>
 
@@ -43,7 +43,7 @@ function Hero() {
           </motion.div>
 
           <motion.p {...rise(0.06)} className="mb-3 text-xs font-medium uppercase tracking-[.36em] text-white/45">Hello, I’m</motion.p>
-          <motion.h1 {...rise(0.12)} className="max-w-4xl text-[clamp(3.7rem,9.3vw,8.8rem)] font-semibold uppercase leading-[.78] tracking-[-.085em]">
+          <motion.h1 {...rise(0.12)} className="max-w-4xl text-[clamp(3.25rem,7.2vw,7.2rem)] font-semibold uppercase leading-[.84] tracking-[-.075em] [overflow-wrap:normal]">
             Deepanshu
             <span className="mt-2 block bg-gradient-to-r from-white via-white/80 to-white/35 bg-clip-text pb-2 text-transparent">Kumar</span>
             <span className="mt-2 block bg-gradient-to-r from-white via-white/80 to-white/35 bg-clip-text pb-3 text-transparent">Pandit<span className="text-violet-300">.</span></span>
@@ -97,7 +97,6 @@ function Hero() {
             </div>
           </div>
           <div aria-hidden="true" className="absolute -bottom-5 -right-2 -z-10 h-28 w-28 rounded-full border border-violet-200/20 sm:-right-6 sm:h-40 sm:w-40" />
-          <div className="absolute -left-3 top-[44%] hidden -translate-x-full items-center gap-3 text-[10px] uppercase tracking-[.2em] text-white/30 xl:flex"><span className="h-px w-10 bg-white/20" />Curiosity → Creation</div>
         </motion.div>
       </div>
 
