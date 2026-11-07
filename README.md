@@ -1,191 +1,154 @@
-# Deepanshu Kumar Pandit — Developer Portfolio
+<div align="center">
 
-<p align="center">
-  <strong>AI/ML • Generative AI • Full-Stack Development</strong>
-</p>
+# Deepanshu Kumar Pandit
 
-<p align="center">
-  A modern, interactive developer portfolio built to showcase projects, technical skills, experience, and professional work.
-</p>
+**AI/ML Developer · Generative AI Builder · Full-Stack Engineer**
 
-<p align="center">
-  <a href="https://github.com/Deepanshu779">GitHub</a> •
-  <a href="https://www.linkedin.com/in/deepanshu-kumar-pandit/">LinkedIn</a>
-</p>
+An editorial, high-performance personal portfolio showcasing applied machine learning systems, Generative AI applications, and modern full-stack web engineering.
+
+[![React](https://img.shields.io/badge/React-19.x-61dafb?style=flat&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646cff?style=flat&logo=vite)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-gray?style=flat)](./LICENSE)
+
+[Explore Work](#featured-projects) • [Tech Stack](#technical-stack) • [Quick Start](#getting-started) • [Contact](#connect)
+
+</div>
 
 ---
 
 ## Overview
 
-This repository contains my personal developer portfolio — a central place to present my technical journey, selected projects, experience, and the technologies I work with.
+This repository contains the source code for my personal engineering portfolio. Designed with a clean editorial dark aesthetic, subtle motion, and zero unnecessary visual bloat, it serves as a central hub for my technical work, production deployments, and applied research across artificial intelligence and full-stack software.
 
-I am a **B.Tech Computer Science & Engineering (AI) student** interested in building practical software across **web development, AI/ML, Generative AI, and interactive user experiences**. I enjoy taking an idea from concept to a usable application with a strong focus on clean interfaces and real-world utility.
+- **Developer:** Deepanshu Kumar Pandit
+- **Academic Focus:** B.Tech in Artificial Intelligence (2024–2028)
+- **Specialization:** Applied ML, LLM Integrations, Agentic Workflows & Responsive Web Architecture
+- **Location:** Delhi NCR, India
 
-The portfolio is designed to make my work easy to explore through dedicated sections for projects, skills, experience, credentials, and contact information.
+---
 
-## Highlights
+## Key Highlights
 
-- Project-focused portfolio presentation
-- Responsive modern UI
-- Interactive motion and 3D elements
-- Technology and skills showcase
-- Experience and credentials sections
-- Direct links to professional profiles
+- **Editorial Design System:** Built on a unified, high-contrast dark theme (`#070707`) with custom typography, clean glassmorphism, and minimal cognitive overhead.
+- **Engineered for Speed:** Bundled via Vite with optimal code-splitting, tree-shaking, and lazy loading for sub-second page loads.
+- **Accessible & Responsive:** Screen-reader friendly semantics, full keyboard navigation, and reduced-motion considerations (`prefers-reduced-motion`).
+- **Verifiable Proof of Work:** Direct links to live deployments (Vercel, Render), open-source repositories, and verified institutional credentials (Credly, NPTEL, Microsoft).
+
+---
 
 ## Featured Projects
 
-| Project | Focus |
-| --- | --- |
-| **KaathiRent** | Rental-focused web application and booking experience |
-| **MedCore** | Healthcare-oriented digital application |
-| **MediAI 2.0** | AI-focused application combining web development and Generative AI concepts |
-| **Pricevana** | Product price and discovery-focused web application |
+| Project | Category | Description | Tech Stack | Source / Demo |
+| :--- | :--- | :--- | :--- | :--- |
+| **Kritam** *(Flagship)* | AI & Full-Stack | Desktop-first personal AI assistant combining voice interaction with local LLM inference (Ollama) and system-level task automation. | Python, FastAPI, React, TypeScript, Electron, Ollama | [GitHub](https://github.com/Deepanshu779/Kritam) |
+| **OCEANNOVA** | AI/ML & Environmental | Environmental monitoring platform analyzing live Automatic Identification System (AIS) vessel data to detect potential maritime oil spills (Smart India Hackathon). | Python, AIS Data Analysis, Machine Learning | [GitHub](https://github.com/Deepanshu779/OCEANNOVA) |
+| **MediAI 2.0** | Healthcare AI | Diagnostic symptom-assessment web application providing educational health guidance and automated report generation via Groq API integration. | Python, Flask, Groq API, NLP, Scikit-Learn | [GitHub](https://github.com/Deepanshu779/MediAI2.0) · [Live Demo](https://ai-healthcare-frgt.onrender.com) |
+| **Pricevana** | Full-Stack & ML | Product discovery and price-tracking utility with predictive machine learning models forecasting potential e-commerce price drops. | JavaScript, Machine Learning, APIs, Vercel | [GitHub](https://github.com/Deepanshu779/Pricevana) · [Live Demo](https://pricevana.vercel.app) |
+| **MedCore 302** | Healthcare Tech | Patient vital-tracking dashboard and clinical appointment management platform focused on accessible medical UI. | Node.js, Express, JavaScript, Render | [GitHub](https://github.com/Deepanshu779/medcore302) · [Live Demo](https://medcore302.onrender.com) |
 
-> The portfolio itself contains additional project details and the latest work.
+---
 
-## Technology Stack
+## Technical Stack
 
-### Frontend
+### Core Technologies
+- **Languages:** Python, JavaScript (ESNext), TypeScript, C++, Java, SQL
+- **Frontend:** React 19, Tailwind CSS v4, Framer Motion
+- **Backend & APIs:** FastAPI, Flask, Node.js, Express.js, REST APIs
+- **Databases:** MySQL, SQLite, MongoDB
 
-- React 19
-- TypeScript
-- JavaScript
-- HTML5
-- CSS3
-- Tailwind CSS
+### AI & Data Science
+- **Frameworks:** Scikit-Learn, Pandas, NumPy
+- **Generative AI:** LLM APIs (Groq, OpenAI), Ollama (Local Inference), Prompt Architecture, NLP pipelines
+- **Data Analysis:** Exploratory Data Analysis, Feature Engineering, Metric Evaluation
 
-### UI, Motion & Icons
+### Tooling & Infrastructure
+- **Build System:** Vite
+- **Version Control:** Git, GitHub
+- **Deployment:** Vercel, Render
+- **Code Quality:** ESLint, TypeScript Strict Checking
 
-- Framer Motion
-- Lucide React
-- React Icons
+---
 
-### 3D & Interactive Graphics
-
-- Three.js
-- React Three Fiber
-- React Three Drei
-
-### Development Tooling
-
-- Vite
-- ESLint
-- Git
-- GitHub
-
-### AI / ML Focus
-
-- Artificial Intelligence
-- Machine Learning
-- Generative AI
-- AI-powered application development
-
-## Project Structure
+## Project Architecture
 
 ```text
 Portfolio/
 ├── public/
-│   ├── projects/          # Project showcase assets
-│   ├── profile.png        # Profile image
-│   ├── resume.pdf         # Resume
-│   └── favicon.svg
-│
+│   ├── projects/          # Optimized screenshots of live applications
+│   ├── favicon.svg        # Scalable vector brand icon
+│   ├── profile.png        # Transparent portrait cutout
+│   └── resume.pdf         # Current technical resume
 ├── src/
-│   ├── components/        # Reusable UI components
-│   ├── sections/          # Main portfolio sections
-│   ├── three/             # Three.js / 3D components
-│   ├── assets/            # Local application assets
-│   ├── App.tsx            # Root application component
-│   ├── main.tsx           # Application entry point
-│   └── index.css          # Global styles
-│
-├── index.html
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+│   ├── components/
+│   │   └── Navbar.tsx     # Frosted floating navigation with active section tracker
+│   ├── sections/
+│   │   ├── Hero.tsx       # Typography-driven introduction & editorial portrait
+│   │   ├── About.tsx      # Core pillars, technical philosophy & availability
+│   │   ├── Skills.tsx     # Interactive stack catalog with live search & filtering
+│   │   ├── Projects.tsx   # Curated flagship & secondary project showcase
+│   │   ├── Experience.tsx # Internship history, university education & leadership
+│   │   ├── Credentials.tsx# Verified certifications & hackathon recognition
+│   │   └── Contact.tsx    # Direct contact actions, email copying & social links
+│   ├── App.tsx            # Main shell, layout, and scroll-to-top controller
+│   ├── index.css          # Tailwind imports, custom scrollbar, and typography
+│   └── main.tsx           # React DOM root entry
+├── index.html             # Document metadata, SEO tags, and web font preconnects
+├── package.json           # Dependencies and build scripts
+├── tsconfig.json          # TypeScript project configuration
+└── vite.config.ts         # Vite bundler configuration
 ```
+
+---
 
 ## Getting Started
 
 ### Prerequisites
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
 
-Install **Node.js** and **npm** before running the project locally.
+### Installation
 
-### Clone the repository
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Deepanshu779/Portfolio.git
+   cd Portfolio
+   ```
 
-```bash
-git clone https://github.com/Deepanshu779/Portfolio.git
-cd Portfolio
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### Install dependencies
+3. **Start the local development server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` in your browser.
 
-```bash
-npm install
-```
+4. **Compile production build:**
+   ```bash
+   npm run build
+   ```
 
-### Start the development server
-
-```bash
-npm run dev
-```
-
-Vite will provide the local development URL in the terminal.
-
-### Build for production
-
-```bash
-npm run build
-```
-
-### Preview the production build
-
-```bash
-npm run preview
-```
-
-### Run lint checks
-
-```bash
-npm run lint
-```
-
-## Design Approach
-
-The portfolio combines a **dark, technology-focused visual system** with responsive layouts, purposeful motion, and interactive 3D elements.
-
-The design goals are simple:
-
-- **Personal branding:** make the developer profile immediately understandable.
-- **Project-first presentation:** surface practical work instead of overwhelming visitors with information.
-- **Interactive experience:** use motion and 3D selectively to add depth and personality.
-- **Responsive layout:** maintain a consistent experience across desktop and smaller screens.
-- **Readable structure:** keep navigation, content hierarchy, and calls to action clear.
-
-## Portfolio Sections
-
-1. **Hero** — Introduction, role, social links, and primary call-to-action.
-2. **About** — Background, interests, and development focus.
-3. **Skills** — Technologies and technical areas.
-4. **Projects** — Selected software and AI projects.
-5. **Experience** — Internship and professional experience.
-6. **Credentials** — Certifications and achievements.
-7. **Contact** — Professional contact and networking links.
-
-## Connect
-
-For projects, collaborations, internships, or development opportunities:
-
-- **GitHub:** [Deepanshu779](https://github.com/Deepanshu779)
-- **LinkedIn:** [Deepanshu Kumar Pandit](https://www.linkedin.com/in/deepanshu-kumar-pandit/)
-- **Email:** deepanshukumarpandit2024@gmail.com
-
-## License & Usage
-
-This is a personal portfolio project. The code may be referenced for learning and inspiration, but personal assets, profile information, resume content, and project materials should not be reused or redistributed as personal work without permission.
+5. **Lint and code quality check:**
+   ```bash
+   npm run lint
+   ```
 
 ---
 
-<p align="center">
-  Built with <strong>React, TypeScript, Tailwind CSS, Framer Motion & Three.js</strong>.
-</p>
+## Connect
+
+If you're building intelligent systems, looking for a motivated AI/ML intern, or interested in collaborating on software projects, feel free to reach out:
+
+- **LinkedIn:** [Deepanshu Kumar Pandit](https://www.linkedin.com/in/deepanshu-kumar-pandit/)
+- **GitHub:** [@Deepanshu779](https://github.com/Deepanshu779)
+- **Email:** [deepanshukumarpandit2024@gmail.com](mailto:deepanshukumarpandit2024@gmail.com)
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE) — you are welcome to use the code structure as inspiration for your own portfolio. Please ensure all personal branding, profile imagery, project media, and resume files are replaced with your own.
