@@ -63,9 +63,9 @@ export default function Navbar() {
     return (
         <>
             {/* Scroll Progress Bar */}
-            <div className="fixed top-0 left-0 right-0 z-[110] h-[2.5px] bg-transparent">
+            <div className="fixed top-0 left-0 right-0 z-[110] h-[2px] bg-transparent">
                 <div
-                    className="h-full bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-500 transition-[width] duration-150 ease-out shadow-[0_0_8px_rgba(34,211,238,0.8)]"
+                    className="h-full bg-gradient-to-r from-violet-300 via-fuchsia-300 to-white transition-[width] duration-150 ease-out"
                     style={{ width: `${scrollProgress}%` }}
                 />
             </div>
@@ -75,8 +75,8 @@ export default function Navbar() {
                 <nav
                     className={`mx-auto flex h-14 max-w-7xl items-center justify-between rounded-full px-4 sm:px-6 transition-all duration-300 ${
                         scrolled
-                            ? "border border-cyan-400/25 bg-[#060c18]/85 shadow-[0_8px_32px_rgba(0,120,255,0.12)] backdrop-blur-xl"
-                            : "border border-white/10 bg-[#060c18]/50 backdrop-blur-md"
+                            ? "border border-white/10 bg-[#070707]/80 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+                            : "border border-white/10 bg-[#070707]/50 backdrop-blur-md"
                     }`}
                 >
                     {/* Brand Logo */}
@@ -84,10 +84,10 @@ export default function Navbar() {
                         href="#home"
                         className="group flex items-center gap-2 text-lg font-bold tracking-tight text-white transition-opacity hover:opacity-90"
                     >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-400/10 border border-cyan-400/30 text-xs font-black tracking-wider text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.25)] transition-transform group-hover:scale-105">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.06] border border-white/15 text-xs font-semibold tracking-wider text-white transition-transform group-hover:scale-105">
                             DP
                         </span>
-                        <span className="hidden sm:inline-block text-xs font-semibold tracking-wider text-slate-200">
+                        <span className="hidden sm:inline-block text-xs font-semibold tracking-widest text-white/80">
                             DEEPANSHU
                         </span>
                     </a>
@@ -102,15 +102,15 @@ export default function Navbar() {
                                     href={item.href}
                                     className={`relative px-3 py-1.5 text-[11px] font-medium tracking-[0.14em] transition-colors ${
                                         isActive
-                                            ? "text-cyan-300 font-semibold"
-                                            : "text-slate-300 hover:text-white"
+                                            ? "text-white font-semibold"
+                                            : "text-white/60 hover:text-white"
                                     }`}
                                 >
                                     {item.label}
                                     {isActive && (
                                         <motion.span
                                             layoutId="activeNavIndicator"
-                                            className="absolute inset-x-2 -bottom-0.5 h-[2px] rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+                                            className="absolute inset-x-2 -bottom-0.5 h-[2px] rounded-full bg-violet-300"
                                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                                         />
                                     )}
@@ -127,7 +127,7 @@ export default function Navbar() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub Profile"
-                                className="flex h-8 w-8 items-center justify-center rounded-full text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-300"
+                                className="flex h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
                             >
                                 <FaGithub size={15} />
                             </a>
@@ -136,7 +136,7 @@ export default function Navbar() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn Profile"
-                                className="flex h-8 w-8 items-center justify-center rounded-full text-slate-300 transition-colors hover:bg-white/10 hover:text-cyan-300"
+                                className="flex h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
                             >
                                 <FaLinkedin size={15} />
                             </a>
@@ -146,7 +146,7 @@ export default function Navbar() {
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-3.5 py-1.5 text-xs font-semibold text-cyan-300 transition-all hover:bg-cyan-400 hover:text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5 text-xs font-semibold text-white/80 transition-all hover:border-violet-300/40 hover:bg-white/[0.08] hover:text-white"
                         >
                             <Download size={13} />
                             <span>Resume</span>
@@ -154,10 +154,11 @@ export default function Navbar() {
 
                         <a
                             href="#contact"
-                            className="hidden md:inline-flex items-center gap-1 rounded-full bg-cyan-400 px-3.5 py-1.5 text-xs font-bold text-slate-950 transition-all hover:bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+                            style={{ color: "#070707" }}
+                            className="hidden md:inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold !text-[#070707] transition-all hover:bg-violet-200"
                         >
-                            <span>Let's Talk</span>
-                            <ArrowUpRight size={13} />
+                            <span style={{ color: "#070707" }}>Let's Talk</span>
+                            <ArrowUpRight size={13} style={{ color: "#070707" }} />
                         </a>
 
                         {/* Mobile Hamburger Toggle */}
@@ -181,7 +182,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-x-4 top-20 z-[99] rounded-2xl border border-cyan-400/30 bg-[#070e1c]/95 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:hidden"
+                        className="fixed inset-x-4 top-20 z-[99] rounded-2xl border border-white/10 bg-[#0c0d14]/95 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl lg:hidden"
                     >
                         <div className="flex flex-col gap-3">
                             {navItems.map((item) => {
@@ -193,13 +194,13 @@ export default function Navbar() {
                                         onClick={handleNavClick}
                                         className={`flex items-center justify-between rounded-xl px-4 py-2.5 text-sm tracking-wider transition-colors ${
                                             isActive
-                                                ? "bg-cyan-400/15 font-bold text-cyan-300"
+                                                ? "bg-violet-400/15 font-bold text-violet-200"
                                                 : "text-slate-300 hover:bg-white/5 hover:text-white"
                                         }`}
                                     >
                                         <span>{item.label}</span>
                                         {isActive && (
-                                            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,1)]" />
+                                            <span className="h-1.5 w-1.5 rounded-full bg-violet-300" />
                                         )}
                                     </a>
                                 );
@@ -211,7 +212,7 @@ export default function Navbar() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={handleNavClick}
-                                    className="flex h-11 items-center justify-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-400/10 text-xs font-bold text-cyan-300"
+                                    className="flex h-11 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] text-xs font-semibold text-white/90"
                                 >
                                     <Download size={15} />
                                     Download Resume
@@ -222,7 +223,7 @@ export default function Navbar() {
                                         href="https://github.com/Deepanshu779"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-300"
+                                        className="flex items-center gap-2 text-xs text-slate-400 hover:text-white"
                                     >
                                         <FaGithub size={15} />
                                         GitHub
@@ -232,7 +233,7 @@ export default function Navbar() {
                                         href="https://www.linkedin.com/in/deepanshu-kumar-pandit/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 text-xs text-slate-400 hover:text-cyan-300"
+                                        className="flex items-center gap-2 text-xs text-slate-400 hover:text-white"
                                     >
                                         <FaLinkedin size={15} />
                                         LinkedIn

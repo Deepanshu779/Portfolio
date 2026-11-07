@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Code2, Download, Sparkles } from "lucide-react";
+import { ArrowUpRight, Code2, Download } from "lucide-react";
 
 const roles = ["AI / ML DEVELOPER", "GENERATIVE AI BUILDER", "FULL-STACK DEVELOPER"];
 
@@ -81,20 +81,20 @@ function Hero() {
           </motion.div>
         </div>
 
-        {/* Portrait as an editorial cover, not a dashboard widget */}
-        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.12, ease }} className="relative mx-auto w-full max-w-[540px]">
+        {/* Portrait presentation */}
+        <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.1, delay: 0.12, ease }} className="relative mx-auto w-full max-w-[500px]">
           <div className="absolute inset-[8%] rounded-[48%] bg-violet-400/15 blur-[90px]" />
-          <div className="relative aspect-[.91/1] overflow-hidden rounded-[48%_48%_12px_12px] border border-white/10 bg-transparent">
-            <motion.img src="/profile.png" alt="Portrait of Deepanshu Kumar Pandit" loading="eager" fetchPriority="high" animate={reduceMotion ? undefined : { y: [0, -4, 0] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 h-full w-full object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,0,0,.22)]" />
-            <div className="absolute left-5 top-5 z-20 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-2 text-[10px] uppercase tracking-[.18em] text-white/65 backdrop-blur-md sm:left-7 sm:top-7">
-              <Sparkles size={12} className="text-violet-200" /> Curious by default
-            </div>
-            <div className="absolute bottom-5 left-5 right-5 z-20 flex items-end justify-between sm:bottom-7 sm:left-7 sm:right-7">
-              <div><p className="text-[10px] uppercase tracking-[.24em] text-white/45">Currently</p><p className="mt-1 text-sm font-medium text-white/90">Learning. Building. Iterating.</p></div>
-              <span className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-black/25 text-white/80 backdrop-blur"><ArrowDownRight size={18} /></span>
-            </div>
+          <div className="relative aspect-[.91/1] overflow-hidden rounded-[40px] border border-white/10 bg-[#0c0d14]/60 backdrop-blur-sm">
+            <motion.img
+              src="/profile.png"
+              alt="Portrait of Deepanshu Kumar Pandit"
+              loading="eager"
+              fetchPriority="high"
+              animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 h-full w-full object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,0,0,.3)]"
+            />
           </div>
-          <div aria-hidden="true" className="absolute -bottom-5 -right-2 -z-10 h-28 w-28 rounded-full border border-violet-200/20 sm:-right-6 sm:h-40 sm:w-40" />
         </motion.div>
       </div>
 

@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#060911] text-slate-100 selection:bg-cyan-500/30 selection:text-white">
+    <div className="relative min-h-screen bg-[#070707] text-white selection:bg-violet-300/30 selection:text-white">
       <Navbar />
 
       <main>
@@ -52,7 +52,7 @@ function App() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Scroll to top"
-            className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-cyan-400/30 bg-[#07101e]/80 text-cyan-300 shadow-[0_0_20px_rgba(0,180,255,0.25)] backdrop-blur-md transition-colors hover:border-cyan-300 hover:bg-cyan-400 hover:text-slate-950"
+            className="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-white/80 backdrop-blur-md transition-colors hover:border-white hover:bg-white hover:text-[#070707]"
           >
             <ArrowUp size={18} strokeWidth={2.5} />
           </motion.button>

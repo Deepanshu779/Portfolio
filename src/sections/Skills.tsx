@@ -134,7 +134,7 @@ export default function Skills() {
     return (
         <section
             id="skills"
-            className="relative overflow-hidden bg-[#030711] px-5 py-28 md:px-10 lg:px-12"
+            className="relative overflow-hidden bg-[#070707] px-5 py-28 md:px-10 lg:px-12"
         >
             {/* Background Atmosphere */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -152,22 +152,22 @@ export default function Skills() {
                     className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
                 >
                     <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/5 px-4 py-1.5">
-                            <Cpu size={13} className="text-violet-300" />
-                            <span className="text-[11px] font-bold tracking-[0.24em] text-violet-300">
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5">
+                            <Cpu size={13} className="text-violet-200" />
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
                                 TECHNICAL STACK
                             </span>
                         </div>
 
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                             Skills &{" "}
-                            <span className="bg-gradient-to-r from-violet-300 to-blue-400 bg-clip-text text-transparent">
-                                Expertise
+                            <span className="bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent">
+                                Technologies
                             </span>
                         </h2>
 
-                        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">
-                            Technologies, languages, and frameworks used across Machine Learning pipelines, backend services, and web development.
+                        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55 md:text-base">
+                            Technologies, languages, and frameworks used across machine learning pipelines, backend services, and web development.
                         </p>
                     </div>
 
@@ -175,20 +175,20 @@ export default function Skills() {
                     <div className="relative w-full max-w-xs">
                         <Search
                             size={16}
-                            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+                            className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40"
                         />
                         <input
                             type="text"
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search skill (e.g. Python, React)..."
-                            className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-10 pr-4 text-xs text-white placeholder-slate-400 backdrop-blur-md outline-none transition-all focus:border-violet-400/60 focus:bg-white/10 focus:ring-1 focus:ring-violet-400/50"
+                            className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/35 backdrop-blur-md outline-none transition-all focus:border-violet-300/60 focus:bg-white/10"
                         />
                         {searchQuery && (
                             <button
                                 type="button"
                                 onClick={() => setSearchQuery("")}
-                                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 hover:text-white"
+                                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[10px] text-white/40 hover:text-white"
                             >
                                 Clear
                             </button>
@@ -207,9 +207,10 @@ export default function Skills() {
                                 onClick={() => setSelectedCategory(cat)}
                                 className={`rounded-full px-4 py-1.5 text-xs font-semibold tracking-wider transition-all ${
                                     isSelected
-                                        ? "bg-violet-400 text-slate-950 shadow-[0_0_15px_rgba(34,211,238,0.35)]"
-                                        : "border border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+                                        ? "bg-white !text-[#070707]"
+                                        : "border border-white/10 bg-white/[0.03] text-white/60 hover:border-white/20 hover:text-white"
                                 }`}
+                                style={{ color: isSelected ? "#070707" : undefined }}
                             >
                                 {cat}
                             </button>
@@ -242,38 +243,22 @@ export default function Skills() {
                                             exit={{ opacity: 0, scale: 0.85 }}
                                             whileHover={{ y: -4, scale: 1.02 }}
                                             transition={{ duration: 0.2 }}
-                                            className="group relative flex h-28 flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#071120]/80 p-4 shadow-[0_4px_20px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all hover:border-violet-400/40"
+                                            className="group relative flex h-28 flex-col items-center justify-center rounded-2xl border border-white/10 bg-[#0c0d14]/70 p-4 backdrop-blur-xl transition-all hover:border-violet-300/40"
                                         >
-                                            {/* Subtle glow beneath icon */}
-                                            <div
-                                                className="pointer-events-none absolute -bottom-4 h-14 w-14 rounded-full opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-60"
-                                                style={{ backgroundColor: skill.color }}
-                                            />
-
                                             <Icon
                                                 className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
                                                 style={{
                                                     color: skill.color,
-                                                    filter: `drop-shadow(0 0 8px ${skill.color}35)`,
                                                 }}
                                             />
 
-                                            <span className="mt-2.5 text-center text-xs font-semibold text-slate-200 transition-colors group-hover:text-white">
+                                            <span className="mt-2.5 text-center text-xs font-semibold text-white/90 transition-colors group-hover:text-white">
                                                 {skill.name}
                                             </span>
 
-                                            <span className="text-[9px] font-medium uppercase tracking-wider text-slate-500">
+                                            <span className="text-[9px] font-medium uppercase tracking-wider text-white/40">
                                                 {skill.group}
                                             </span>
-
-                                            {/* Bottom accent glow */}
-                                            <span
-                                                className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-3/5"
-                                                style={{
-                                                    backgroundColor: skill.color,
-                                                    boxShadow: `0 0 10px ${skill.color}`,
-                                                }}
-                                            />
                                         </motion.div>
                                     );
                                 })}

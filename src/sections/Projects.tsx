@@ -150,9 +150,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.3, delay: index * 0.04 }}
-            className="group overflow-hidden rounded-3xl border border-white/[0.09] bg-[#07101d]/80 transition-colors duration-300 hover:border-violet-300/35"
+            className="group overflow-hidden rounded-3xl border border-white/10 bg-[#0c0d14]/70 transition-colors duration-300 hover:border-violet-300/35"
         >
-            <div className="relative aspect-[16/9] overflow-hidden border-b border-white/[0.08] bg-gradient-to-br from-violet-950/60 via-[#091324] to-fuchsia-950/30">
+            <div className="relative aspect-[16/9] overflow-hidden border-b border-white/[0.08] bg-gradient-to-br from-[#121320] via-[#090b14] to-[#140b20]">
                 {project.image ? (
                     <img
                         src={project.image}
@@ -170,7 +170,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         <Sparkles className="mb-1 text-violet-200/70" size={30} aria-hidden="true" />
                     </div>
                 )}
-                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-[#030711]/80 px-3 py-1 font-mono text-[10px] tracking-widest text-violet-100 backdrop-blur">
+                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-[#070707]/80 px-3 py-1 font-mono text-[10px] tracking-widest text-violet-100 backdrop-blur">
                     WORK / {project.number}
                 </span>
             </div>
@@ -180,7 +180,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                     <Status status={project.status} />
                 </div>
                 <h3 className="mt-3 text-2xl font-bold tracking-tight text-white">{project.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300/80">{project.description}</p>
+                <p className="mt-3 text-sm leading-7 text-white/60">{project.description}</p>
                 <TechList items={project.technologies} />
                 <ProjectActions project={project} />
             </div>
@@ -197,10 +197,10 @@ export default function Projects() {
     const showFlagship = selectedCategory === "ALL" || flagship.tags.includes(selectedCategory);
 
     return (
-        <section id="work" className="relative overflow-hidden bg-[#030711] px-5 py-24 md:px-10 md:py-28 lg:px-12">
+        <section id="work" className="relative overflow-hidden bg-[#070707] px-5 py-24 md:px-10 md:py-28 lg:px-12">
             <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-                <div className="absolute -left-44 top-40 h-[480px] w-[480px] rounded-full bg-violet-500/[0.06] blur-[150px]" />
-                <div className="absolute -right-40 top-[35%] h-[440px] w-[440px] rounded-full bg-fuchsia-500/[0.04] blur-[150px]" />
+                <div className="absolute -left-44 top-40 h-[480px] w-[480px] rounded-full bg-violet-500/[0.04] blur-[150px]" />
+                <div className="absolute -right-40 top-[35%] h-[440px] w-[440px] rounded-full bg-fuchsia-500/[0.03] blur-[150px]" />
             </div>
 
             <div className="relative mx-auto max-w-7xl">
@@ -212,16 +212,16 @@ export default function Projects() {
                     className="flex flex-col gap-7 md:flex-row md:items-end md:justify-between"
                 >
                     <div>
-                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/[0.06] px-4 py-1.5">
+                        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-1.5">
                             <Sparkles size={13} className="text-violet-200" aria-hidden="true" />
-                            <span className="text-[11px] font-bold tracking-[0.22em] text-violet-200">SELECTED WORK · 05 PROJECTS</span>
+                            <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">SELECTED WORK</span>
                         </div>
                         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                            Building things{" "}
-                            <span className="bg-gradient-to-r from-violet-200 to-fuchsia-300 bg-clip-text text-transparent">that matter.</span>
+                            Featured{" "}
+                            <span className="bg-gradient-to-r from-white via-white/80 to-white/40 bg-clip-text text-transparent">Projects</span>
                         </h2>
-                        <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400 md:text-base">
-                            A focused selection of projects across AI, software engineering, and real-world problem solving. Each one is a work in progress in the best sense: built, tested, and improved over time.
+                        <p className="mt-4 max-w-2xl text-sm leading-7 text-white/55 md:text-base">
+                            A focused selection of projects across AI, machine learning, and full-stack software development. Built, deployed, and tested.
                         </p>
                     </div>
                     <div className="flex flex-wrap gap-2" aria-label="Filter projects">
@@ -233,10 +233,11 @@ export default function Projects() {
                                     type="button"
                                     aria-pressed={active}
                                     onClick={() => setSelectedCategory(category.value)}
+                                    style={{ color: active ? "#070707" : undefined }}
                                     className={`inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-200 ${
                                         active
-                                            ? "bg-violet-300 text-slate-950 shadow-[0_0_18px_rgba(167,139,250,0.2)]"
-                                            : "border border-white/10 bg-white/[0.04] text-slate-300 hover:border-violet-200/30 hover:text-white"
+                                            ? "bg-white !text-[#070707]"
+                                            : "border border-white/10 bg-white/[0.04] text-white/60 hover:border-white/20 hover:text-white"
                                     }`}
                                 >
                                     <Layers size={13} aria-hidden="true" />
@@ -253,9 +254,9 @@ export default function Projects() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.15 }}
                         transition={{ duration: 0.5 }}
-                        className="relative mt-12 overflow-hidden rounded-[30px] border border-violet-300/20 bg-gradient-to-br from-[#0a1425] via-[#070d19] to-[#160b25] shadow-[0_18px_65px_rgba(0,0,0,0.28)]"
+                        className="relative mt-12 overflow-hidden rounded-[30px] border border-white/10 bg-[#0c0d14]/90 shadow-[0_18px_65px_rgba(0,0,0,0.4)]"
                     >
-                        <div className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-violet-400/[0.09] blur-[100px]" aria-hidden="true" />
+                        <div className="pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-violet-400/[0.07] blur-[100px]" aria-hidden="true" />
                         <div className="relative grid gap-8 p-6 sm:p-9 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12 lg:p-12">
                             <div>
                                 <div className="flex flex-wrap items-center gap-3">
@@ -264,19 +265,19 @@ export default function Projects() {
                                 </div>
                                 <p className="mt-6 text-[11px] font-bold tracking-[0.22em] text-violet-200">{flagship.eyebrow}</p>
                                 <h3 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">{flagship.title}</h3>
-                                <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300/85 sm:text-base">{flagship.description}</p>
+                                <p className="mt-5 max-w-2xl text-sm leading-7 text-white/65 sm:text-base">{flagship.description}</p>
                                 <TechList items={flagship.technologies} />
                                 <ProjectActions project={flagship} />
                             </div>
-                            <div className="relative flex min-h-[230px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[#030711]/55 p-6 sm:min-h-[280px] sm:p-8">
-                                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(167,139,250,0.16),transparent_55%)]" aria-hidden="true" />
+                            <div className="relative flex min-h-[230px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:min-h-[280px] sm:p-8">
+                                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(167,139,250,0.12),transparent_55%)]" aria-hidden="true" />
                                 <div className="relative flex items-center justify-between">
-                                    <span className="font-mono text-[10px] tracking-[0.2em] text-slate-500">PROJECT NOTE</span>
-                                    <span className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(252,211,77,0.6)]" />
+                                    <span className="font-mono text-[10px] tracking-[0.2em] text-white/40">PROJECT ARCHITECTURE</span>
+                                    <span className="h-2 w-2 rounded-full bg-amber-300" />
                                 </div>
                                 <div className="relative">
-                                    <p className="text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">A more personal way to work with AI.</p>
-                                    <p className="mt-3 max-w-sm text-sm leading-6 text-slate-400">Hybrid local + cloud intelligence · Voice-first workflows · Desktop experience</p>
+                                    <p className="text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl">Desktop-first, voice-enabled assistant.</p>
+                                    <p className="mt-3 max-w-sm text-sm leading-6 text-white/55">Hybrid local (Ollama) + cloud models · Natural speech interface · System automation</p>
                                 </div>
                                 <p className="relative mt-8 font-mono text-[10px] tracking-[0.18em] text-violet-200/70">ACTIVE DEVELOPMENT</p>
                             </div>
